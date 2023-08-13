@@ -1,4 +1,6 @@
-﻿namespace DataAccess.Abstract;
+﻿using System.Linq.Expressions;
+
+namespace DataAccess.Abstract;
 
 public interface IGenericDal<T> where T : class, new()
 {
@@ -7,5 +9,7 @@ public interface IGenericDal<T> where T : class, new()
     public void Delete(T entity);
     public List<T> GetAll();
     public T GetById(Guid id);
+    
+    List<T> GetListByFilter(Expression<Func<T, bool>> filter);
     
 }

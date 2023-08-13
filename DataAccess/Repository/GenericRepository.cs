@@ -1,4 +1,5 @@
-﻿using DataAccess.Abstract;
+﻿using System.Linq.Expressions;
+using DataAccess.Abstract;
 using DataAccess.Concrete;
 
 namespace DataAccess.Repository;
@@ -41,5 +42,10 @@ public class GenericRepository<T> : IGenericDal<T> where T : class, new()
     public T GetById(Guid id)
     {
         return _context.Set<T>().Find(id);
+    }
+
+    public List<T> GetListByFilter(Expression<Func<T, bool>> filter)
+    {
+        return _context.Set<T>().Where(filter).ToList();
     }
 }

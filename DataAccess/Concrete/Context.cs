@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete;
 
-public class Context :IdentityDbContext<IdentityUser>
+public class Context :IdentityDbContext<ApplicationUser>
 {
     
     public Context(DbContextOptions<Context> options) : base(options)
@@ -27,6 +27,7 @@ public class Context :IdentityDbContext<IdentityUser>
     public DbSet<SubAbout> SubAbouts { get; set; }
     public DbSet<SubFeature> SubFeatures { get; set; }
     public DbSet<Newsletter> Newsletters { get; set; }
+    public DbSet<Comment> Comments { get; set; }
     
 
     

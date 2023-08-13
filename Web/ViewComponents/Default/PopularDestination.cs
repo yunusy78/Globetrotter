@@ -1,7 +1,6 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete;
 using DataAccess.Repository;
-using Entity.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.ViewComponents.Default;

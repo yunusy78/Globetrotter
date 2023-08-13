@@ -1,4 +1,5 @@
-﻿using Business.Abstract;
+﻿using System.Linq.Expressions;
+using Business.Abstract;
 using DataAccess.Abstract;
 using Entity.Concrete;
 
@@ -36,5 +37,10 @@ public class ContactManager : IContactService
     public Contact GetById(Guid id)
     {
         return _contactDal.GetById(id);
+    }
+
+    public List<Contact> GetListByFilter(Expression<Func<Contact, bool>> filter)
+    {
+        throw new NotImplementedException();
     }
 }

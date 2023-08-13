@@ -1,7 +1,8 @@
-﻿<header id="site-header" class="fixed-top">
+﻿
+<header id="site-header" class="fixed-top">
   <div class="container">
     <nav class="navbar navbar-expand-lg stroke">
-      <h1><a class="navbar-brand mr-lg-5" href="~/Traversal-Starter/index.html">
+      <h1><a class="navbar-brand mr-lg-5" href="~/Traversal-Liberty/index.html">
         Globetrotter
       </a></h1>
       <!-- if logo is image enable this   
@@ -17,24 +18,38 @@
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/Default/Index">Hjem<span class="sr-only">(current)</span></a>
+          </li>
           <li class="nav-item active">
-            <a class="nav-link" href="~/Traversal-Starter/index.html">Hjem<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="~/Traversal-Liberty/about.html">Om Oss</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="~/Traversal-Starter/about.html">Om Oss</a>
+            <a class="nav-link" href="/Destination/Index">Destinasjoner</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="~/Traversal-Starter/services.html">Reisemål</a>
+            <a class="nav-link" href="~/Traversal-Liberty/pricing.html">Pakker</a>
           </li>
-    
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+              Blog<span class="fa fa-angle-down"></span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+              <a class="dropdown-item" href="~/Traversal-Liberty/blog.html">Blogginnlegg</a>
+              <a class="dropdown-item" href="~/Traversal-Liberty/blog-single.html">Enkelt Blogginnlegg</a>
+              <a class="dropdown-item" href="~/Traversal-Liberty/landing-single.html">Landingsside</a>
+            </div>
+          </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="~/Traversal-Starter/contact.html">Kontakt</a>
+            <a class="nav-link" href="~/Traversal-Liberty/contact.html">Kontakt</a>
           </li>
 
         </ul>
       </div>
       <div class="d-lg-block d-none">
-        <a href="~/Traversal-Starter/contact.html" class="btn btn-style btn-secondary">Kom i kontakt</a>
+        <a href="~/Traversal-Liberty/contact.html" class="btn btn-style btn-secondary">Kom i kontakt</a>
       </div>
       <!-- toggle switch for light and dark theme -->
       <div class="mobile-position">
@@ -50,7 +65,10 @@
           </div>
         </nav>
       </div>
+        <partial name="_LoginPartial"/>
       <!-- //toggle switch for light and dark theme -->
     </nav>
+    
   </div>
-</header>
+  
+  </header>

@@ -1,4 +1,5 @@
-﻿using Business.Abstract;
+﻿using System.Linq.Expressions;
+using Business.Abstract;
 using DataAccess.Abstract;
 using Entity.Concrete;
 
@@ -36,5 +37,10 @@ public class DestinationManager : IDestinationService
     public Destination GetById(Guid id)
     {
         return _destinationDal.GetById(id);
+    }
+
+    public List<Destination> GetListByFilter(Expression<Func<Destination, bool>> filter)
+    {
+        throw new NotImplementedException();
     }
 }
