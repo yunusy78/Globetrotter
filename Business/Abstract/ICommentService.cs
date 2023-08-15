@@ -6,4 +6,5 @@ public interface ICommentService : IGenericService<Comment>
 {
     List<Comment> GetDestinationById(Guid id);
     
+    List<Comment> TGetListWithDestination();
 }

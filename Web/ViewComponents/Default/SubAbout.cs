@@ -1,4 +1,5 @@
-﻿using Business.Concrete;
+﻿using Business.Abstract;
+using Business.Concrete;
 using DataAccess.Concrete;
 using DataAccess.Repository;
 using Microsoft.AspNetCore.Mvc;
@@ -7,15 +8,14 @@ namespace Web.ViewComponents.Default;
 
 public class SubAbout : ViewComponent
 {
-    private readonly Context _context;
-    private readonly SubAboutManager _subAboutManager;
     
-    public SubAbout(Context context)
+    private readonly ISubAboutService _subAboutManager;
+    
+    
+    public SubAbout(ISubAboutService subAboutManager)
     {
-        _context = context;
-        _subAboutManager = new SubAboutManager(new EfSubAboutDal(context));
+        _subAboutManager = subAboutManager;
     }
-    
     
     public IViewComponentResult Invoke()
     {

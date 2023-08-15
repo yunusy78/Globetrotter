@@ -1,4 +1,5 @@
-﻿using Business.Concrete;
+﻿using Business.Abstract;
+using Business.Concrete;
 using DataAccess.Concrete;
 using DataAccess.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
@@ -7,13 +8,11 @@ namespace Web.ViewComponents.Comment;
 
 public class CommentList : ViewComponent
 {
-    private readonly Context _context;
-    private readonly CommentManager _commentManager;
+    private readonly ICommentService _commentManager;
     
-    public CommentList(Context context)
+    public CommentList(ICommentService commentManager)
     {
-        _context = context;
-        _commentManager = new CommentManager(new EfCommentDal(_context));
+        _commentManager = commentManager;
     }
     
     public IViewComponentResult Invoke(Guid id)

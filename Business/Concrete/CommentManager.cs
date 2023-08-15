@@ -48,5 +48,9 @@ public class CommentManager : ICommentService
     {
         return _commentDal.GetListByFilter(x => x.DestinationId == id);
     }
-    
+
+    public List<Comment> TGetListWithDestination()
+    {
+        return _commentDal.TGetListWithDestination();
+    }
 }

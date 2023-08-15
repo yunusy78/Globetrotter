@@ -9,14 +9,11 @@ namespace DataAccess.Concrete;
 public class Context :IdentityDbContext<ApplicationUser>
 {
     
-    public Context(DbContextOptions<Context> options) : base(options)
-    {
-    }
-    
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        base.OnModelCreating(modelBuilder);
-    }
+   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+   {
+       optionsBuilder.UseMySQL("Server=127.0.0.1;Database=globetrotterdb;User Id=root;Password=4922;");
+   }
+
     
     public DbSet<About> Abouts { get; set; }
     public DbSet<Destination> Destinations { get; set; }
@@ -28,6 +25,8 @@ public class Context :IdentityDbContext<ApplicationUser>
     public DbSet<SubFeature> SubFeatures { get; set; }
     public DbSet<Newsletter> Newsletters { get; set; }
     public DbSet<Comment> Comments { get; set; }
+    
+    public DbSet<Reservation> Reservations { get; set; }
     
 
     

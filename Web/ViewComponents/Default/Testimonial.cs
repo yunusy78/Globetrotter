@@ -1,4 +1,5 @@
-﻿using Business.Concrete;
+﻿using Business.Abstract;
+using Business.Concrete;
 using DataAccess.Concrete;
 using DataAccess.Repository;
 using Microsoft.AspNetCore.Mvc;
@@ -7,18 +8,15 @@ namespace Web.ViewComponents.Default;
 
 public class Testimonial : ViewComponent
 {
-    private readonly Context _context;
+    
 
-    private readonly TestimonialManager _testimonialManager;
+    private readonly ITestimonialService _testimonialManager;
     
     
-    public Testimonial(Context context)
+    public Testimonial(ITestimonialService testimonialManager)
     {
-        _context = context;
-        
-        _testimonialManager = new TestimonialManager(new EfTestimonialDal(context));
+        _testimonialManager = testimonialManager;
     }
-    
     
     public IViewComponentResult Invoke()
     {

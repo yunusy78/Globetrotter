@@ -1,0 +1,14 @@
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Entity\bin\Debug\net7.0\Entity.deps.json
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Entity\bin\Debug\net7.0\Entity.runtimeconfig.json
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Entity\bin\Debug\net7.0\Entity.dll
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Entity\bin\Debug\net7.0\Entity.pdb
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Entity\obj\Debug\net7.0\Entity.csproj.AssemblyReference.cache
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Entity\obj\Debug\net7.0\Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Entity\obj\Debug\net7.0\Entity.AssemblyInfoInputs.cache
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Entity\obj\Debug\net7.0\Entity.AssemblyInfo.cs
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Entity\obj\Debug\net7.0\Entity.csproj.CoreCompileInputs.cache
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Entity\obj\Debug\net7.0\Entity.dll
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Entity\obj\Debug\net7.0\refint\Entity.dll
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Entity\obj\Debug\net7.0\Entity.pdb
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Entity\obj\Debug\net7.0\Entity.genruntimeconfig.cache
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Entity\obj\Debug\net7.0\ref\Entity.dll

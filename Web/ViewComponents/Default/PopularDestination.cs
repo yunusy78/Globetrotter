@@ -1,4 +1,5 @@
-﻿using Business.Concrete;
+﻿using Business.Abstract;
+using Business.Concrete;
 using DataAccess.Concrete;
 using DataAccess.Repository;
 using Microsoft.AspNetCore.Mvc;
@@ -7,13 +8,11 @@ namespace Web.ViewComponents.Default;
 
 public class PopularDestination : ViewComponent
 {
-    private readonly DestinationManager _destinationManager;
-    private readonly Context _db;
+    private readonly IDestinationService _destinationManager;
     
-    public PopularDestination(Context db)
+    public PopularDestination(IDestinationService destinationManager)
     {
-        _db = db;
-        _destinationManager = new DestinationManager(new EfDestinationDal(_db));
+        _destinationManager = destinationManager;
     }
     
     

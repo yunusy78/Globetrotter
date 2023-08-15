@@ -10,4 +10,6 @@ public class ApplicationUser : IdentityUser
     public string? About { get; set; }
     public string? Gender { get; set; }
     
+    public List<Reservation>? Reservations { get; set; }
+    
 }

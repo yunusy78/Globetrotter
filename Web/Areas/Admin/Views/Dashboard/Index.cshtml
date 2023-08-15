@@ -1,0 +1,48 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+<html
+  lang="en"
+  class="light-style layout-menu-fixed"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="../assets/"
+  data-template="vertical-menu-template-free"
+>
+ @await Html.PartialAsync("~/Areas/Admin/Views/AdminLayout/_DashboardHeader.cshtml")
+
+  <body>
+  
+              <div class="row">
+              @await Component.InvokeAsync("DashboardBanner")
+              @await Component.InvokeAsync("CartStatistic")
+              <!-- Total Revenue -->
+              @await Component.InvokeAsync("TotalRevenue")
+              <!--/ Total Revenue -->
+              @await Component.InvokeAsync("Card2Statistic")
+              </div>
+  <div class="row">
+    <!-- Order Statistics -->
+    @await Component.InvokeAsync("DestinationStatistic")
+    <!--/ Order Statistics -->
+
+    <!-- Expense Overview -->
+    @await Component.InvokeAsync("DestinationStatistic2")
+    <!--/ Expense Overview -->
+
+    <!-- Transactions -->
+    @await Component.InvokeAsync("GuidesList")
+    <!--/ Transactions -->
+  </div>
+  
+  <div class="content-backdrop fade"></div>
+  
+        <!-- Overlay -->
+        <div class="layout-overlay layout-menu-toggle"></div>
+  
+ @await Html.PartialAsync("~/Areas/Admin/Views/AdminLayout/_DashboardScript.cshtml")
+  
+  </body>

@@ -1,4 +1,5 @@
-﻿using Business.Concrete;
+﻿using Business.Abstract;
+using Business.Concrete;
 using DataAccess.Concrete;
 using DataAccess.EntityFramework;
 using Entity.Concrete;
@@ -8,14 +9,14 @@ namespace Web.Controllers;
 
 public class CommentController : Controller
 {
-    private readonly Context _context;
-    private readonly CommentManager _commentManager;
+   
+    private readonly ICommentService _commentManager;
     
-    public CommentController(Context context)
+    public CommentController(ICommentService commentManager)
     {
-        _context = context;
-        _commentManager = new CommentManager(new EfCommentDal(_context));
+        _commentManager = commentManager;
     }
+    
     
     // GET
     public PartialViewResult AddComment()

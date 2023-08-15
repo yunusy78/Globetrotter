@@ -1,0 +1,118 @@
+﻿@model Entity.Concrete.Destination
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "_AdminLayout";
+}
+
+<html>
+<head>
+    <title>Oppdater Profil </title>
+    <style>
+        .custom-form {
+        	border: 1px solid #ccc;
+        	padding: 20px;
+        	border-radius: 10px;
+        	margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 custom-form">
+            <h1 class="text-center">Opdater Destinasjonn</h1>
+            <form asp-controller="AdminDestination" asp-action="Edit" asp-area="Admin" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">Destinasjon:</label>
+                    <input type="text" id="title" asp-for="City" class="form-control" value="@Model.City"  placeholder="City">
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <input type="hidden" id="title" asp-for="Id" class="form-control" value="@Model.Id"  placeholder="City">
+                </div>
+                <div class="form-group">
+                    <label for="title">Dag-Natt:</label>
+                    <input type="text" id="title" asp-for="DayNight" class="form-control" value="@Model.DayNight"  placeholder="Dag-Natt">
+                    <span asp-validation-for="DayNight" class="text-danger"></span>
+                </div>
+                <br/>
+                
+                <div class="form-group">
+                    <label for="title">Pris:</label>
+                    <input type="number" id="title" asp-for="Price" class="form-control" value="@Model.Price" placeholder="Pris">
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <br/>
+                
+                <div class="form-group">
+                    <label for="title">Antall Kapasitet</label>
+                    <input type="number" id="title" asp-for="Capacity" class="form-control" value="@Model.Capacity"  placeholder="Antall Kapasitet">
+                    <span asp-validation-for="Capacity" class="text-danger"></span>
+                </div>
+                <br/>
+                
+                @{
+                    string isSelected = Model.Status ? "selected" : "";
+                }
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status" asp-for="Status" class="form-control">
+                        <<option value="true" selected="@isSelected">True</option>
+                         <option value="false" selected="@(isSelected == "" ? "selected" : "")">False</option>
+                    </select>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">Beskrivelse:</label>
+                    <textarea type="text" id="title" asp-for="Description" rows="5" class="form-control" value="@Model.Description" placeholder="Beskrivelse"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="title">Detaljer 1</label>
+                    <textarea type="text" id="title" asp-for="Details1" rows="5" class="form-control" value="@Model.Details1"  placeholder="Detaljer 1"></textarea>
+                    <span asp-validation-for="Details1" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">Detaljer 2</label>
+                    <textarea type="text" id="title" asp-for="Details2" rows="5" class="form-control" value="@Model.Details2" placeholder="Detaljer 2"></textarea>
+                    <span asp-validation-for="Details2" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="mb-3">
+                    <label asp-for="ImageUrl">Velg Bilde 1:</label>
+                    <input type="file" id="uploadBox" name="file1" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <input type="hidden" asp-for="@Model.ImageUrl" />
+                </div>
+                <br/>
+                <div class="mb-3">
+                    <label asp-for="ImageUrl2">Velg Bilde 2:</label>
+                    <input type="file" id="uploadBox" name="file2" class="form-control"/>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <input type="hidden" asp-for="@Model.ImageUrl2" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="CoverImageUrl">Velg Bilde:</label>
+                    <input type="file" id="uploadBox" name="file3" class="form-control"/>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <input type="hidden" asp-for="@Model.CoverImageUrl" />
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-warning"><i class="fa fa-edit"></i> Lagre</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

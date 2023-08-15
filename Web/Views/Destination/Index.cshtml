@@ -35,10 +35,12 @@
               {
               <div class="col-lg-4 col-md-4 col-6">
                   <div class="column">
-                      <a href="/Destination/Details/@item.Id"><img src="/@item.ImageUrl" alt="" class="img-fluid"></a>
+                      <a href="/Destination/Details/@item.Id"><img src="@item.ImageUrl" alt="" class="img-fluid"></a>
                       <div class="info">
                           <h4><a href="#">@item.City</a></h4>
-                          <p>@item.DayNight</p>
+                          <p>@item.DayNight  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                              <a href="/Member/Reservation/AddReservation" class="btn  btn-danger">Opprett Rezervasjon</a>
+                          </p>
                           <div class="dst-btm">
                               <h6 class="">Starter Fra </h6>
                               <span>NOK @item.Price</span>

@@ -1,4 +1,5 @@
-﻿using Business.Concrete;
+﻿using Business.Abstract;
+using Business.Concrete;
 using DataAccess.Repository;
 using Entity.Concrete;
 using Microsoft.AspNetCore.Mvc;
@@ -8,15 +9,14 @@ namespace Web.Controllers;
 
 public class DestinationController : Controller
 {
-    private readonly Context _context;
-    private readonly DestinationManager _destinationManager;
     
-    public DestinationController(Context context)
+    private readonly IDestinationService _destinationManager;
+    
+    public DestinationController( IDestinationService destinationManager)
     {
-        _context = context;
-        _destinationManager = new DestinationManager(new EfDestinationDal(_context));
+        _destinationManager = destinationManager;
     }
-    
+   
     
     // GET
     public IActionResult Index()

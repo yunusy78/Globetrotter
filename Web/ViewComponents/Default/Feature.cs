@@ -1,4 +1,5 @@
-﻿using Business.Concrete;
+﻿using Business.Abstract;
+using Business.Concrete;
 using DataAccess.Concrete;
 using DataAccess.Repository;
 using Microsoft.AspNetCore.Mvc;
@@ -7,14 +8,13 @@ namespace Web.ViewComponents.Default;
 
 public class Feature : ViewComponent
 {
-    private readonly FeatureManager _featureManager;
-    private readonly Context _context;
+    private readonly IFeatureService _featureManager;
     
-    public Feature(Context context)
+    public Feature(IFeatureService featureManager)
     {
-        _featureManager = new FeatureManager(new EfFeatureDal(context));
-        _context = context;
+        _featureManager = featureManager;
     }
+    
     
     
     public IViewComponentResult Invoke()

@@ -10,6 +10,8 @@ public class Guide
     public string? FullName { get; set; }
     public string? ImageUrl { get; set; }
     public string? Description { get; set; }
+    
+    public bool Status { get; set; }
     public string? Email { get; set; }
     public string? InstagramUrl { get; set; }
     public string? FacebookUrl { get; set; }

@@ -1,0 +1,102 @@
+﻿@model System.Collections.Generic.List<Entity.Concrete.Reservation>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+    int count = 0;
+}
+
+<div class="row">
+        <div class="col-12">
+          <div class="card mb-4">
+            <div class="card-header pb-0">
+              <h6> @ViewBag.UserName Reservasjoner</h6>
+            </div>
+            <div class="card-body px-0 pt-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center justify-content-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">#</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Bilde</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Destinasjon</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Antall Personer</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Reservation Date</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Totalpris</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tilstand</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  @foreach(var item in Model)
+                  {
+                    
+                    <tr>
+                      @{ count = count + 1;}
+                      <td>@count</td>
+                      <td>
+                        <div class="d-flex px-2">
+                          <div>
+                            <img src="@item.Destination!.ImageUrl" class="avatar avatar-sm rounded-circle me-2">
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-xs font-weight-bold">@item.Destination.City</p>
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold">@item.PersonCount</span>
+                      </td>
+                      <td >
+                        <span class="text-xs font-weight-bold">@item.ReservationDate</span>
+                      </td>
+                      <td >
+                        <span class="text-xs font-weight-bold">@item.TotalPrice</span>
+                      </td>
+                     <td>
+                         @if (item.Status == "Avventer")
+                         {
+                             <span class="text-xs font-weight-bold text-warning">
+                                 <i class="fas fa-clock"></i> @item.Status
+                             </span>
+                         }
+                         else if (item.Status == "Godkjent")
+                         {
+                             <span class="text-xs font-weight-bold text-success">
+                                 <i class="fas fa-check-circle"></i> @item.Status
+                             </span>
+                         }
+                         else if (item.Status == "Avslått")
+                         {
+                             <span class="text-xs font-weight-bold text-danger">
+                                 <i class="fas fa-times-circle"></i> @item.Status
+                             </span>
+                         }
+                         else if (item.Status == "Pågår")
+                         {
+                             <span class="text-xs font-weight-bold text-info">
+                                 <i class="fas fa-spinner"></i> @item.Status
+                             </span>
+                         }
+                         else if (item.Status == "Fullført")
+                         {
+                             <span class="text-xs font-weight-bold text-primary">
+                                 <i class="fas fa-check"></i> @item.Status
+                             </span>
+                         }
+                         else
+                         {
+                             <span class="text-xs font-weight-bold">@item.Status</span>
+                         }
+                     </td>
+
+                    </tr>
+}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+

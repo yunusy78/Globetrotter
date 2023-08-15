@@ -6,7 +6,6 @@ namespace DataAccess.Repository;
 
 public class EfNewsletterDal : GenericRepository<Newsletter> , INewsletterDal
 {
-    public EfNewsletterDal(Context context) : base(context)
-    {
-    }
+    
+    
 }

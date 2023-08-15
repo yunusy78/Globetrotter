@@ -1,0 +1,94 @@
+﻿@model Entity.Concrete.Destination
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "_AdminLayout";
+}
+
+<html>
+<head>
+    <title>Oppdater Profil </title>
+    <style>
+        .custom-form {
+        	border: 1px solid #ccc;
+        	padding: 20px;
+        	border-radius: 10px;
+        	margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 custom-form">
+            <h1 class="text-center">Ny Destination</h1>
+            <form asp-controller="AdminDestination" asp-action="Add" asp-area="Admin" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">Destinasjon:</label>
+                    <input type="text" id="title" asp-for="City" class="form-control"  placeholder="City" required="">
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">Dag-Natt:</label>
+                    <input type="text" id="title" asp-for="DayNight" class="form-control"  placeholder="Dag-Natt" required="">
+                    <span asp-validation-for="DayNight" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">Pris:</label>
+                    <input type="number" id="title" asp-for="Price" class="form-control"placeholder="Pris">
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">Antall Kapasitet</label>
+                    <input type="number" id="title" asp-for="Capacity" class="form-control"  placeholder="Antall Kapasitet">
+                    <span asp-validation-for="Capacity" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">Beskrivelse:</label>
+                    <textarea type="text" id="title" asp-for="Description" rows="4" class="form-control" placeholder="Beskrivelse"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">Detaljer 1</label>
+                    <textarea type="text" id="title" asp-for="Details1" rows="5" class="form-control"  placeholder="Detaljer 1"></textarea>
+                    <span asp-validation-for="Details1" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">Detaljer 2</label>
+                    <textarea type="text" id="title" asp-for="Details2" rows="5" class="form-control" placeholder="Detaljer 2"></textarea>
+                    <span asp-validation-for="Details2" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="mb-3">
+                    <label asp-for="ImageUrl">Velg Bilde 1:</label>
+                    <input type="file" id="uploadBox" name="file1" class="form-control"/>
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="mb-3">
+                    <label asp-for="ImageUrl2">Velg Bilde 2:</label>
+                    <input type="file" id="uploadBox" name="file2" class="form-control"/>
+                </div>
+                <br/>
+                <div class="mb-3">
+                    <label asp-for="CoverImageUrl">Velg Bilde:</label>
+                    <input type="file" id="uploadBox" name="file3" class="form-control"/>
+                </div>
+                <br/>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-warning"><i class="fa fa-edit"></i> Lagre</button>
+                </div>
+                <br/>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

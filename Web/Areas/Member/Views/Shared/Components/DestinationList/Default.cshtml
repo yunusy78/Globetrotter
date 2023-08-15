@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Entity.Concrete.Destination>
+
+<div class="col-12 mt-4">
+    <div class="card mb-4">
+        <div class="card-header pb-0 p-3">
+            <h6 class="mb-1">Reisemål</h6>
+            <p class="text-sm">Populære 4 Reisemål</p>
+        </div>
+        <div class="card-body p-3">
+            <div class="row">
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    var destination = Model.ElementAt(i);
+                    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                        <div class="card card-blog card-plain">
+                            <div class="position-relative">
+                                <a class="d-block shadow-xl border-radius-xl">
+                                    <img src="@destination.ImageUrl" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                </a>
+                            </div>
+                            <div class="card-body px-1 pb-0">
+                                <p class="text-gradient text-dark mb-2 text-sm">@($"{i + 1}. Populære Reisemål")</p>
+                                <a href="javascript:;">
+                                    <h5>
+                                        @destination.City
+                                    </h5>
+                                </a>
+                                <p class="mb-4 text-sm">
+                                    @destination.Description
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,14 +1,9 @@
-﻿
-<header id="site-header" class="fixed-top">
+﻿<header id="site-header" class="fixed-top">
   <div class="container">
     <nav class="navbar navbar-expand-lg stroke">
-      <h1><a class="navbar-brand mr-lg-5" href="~/Traversal-Liberty/index.html">
+      <h1><a class="navbar-brand mr-lg-5" href="/Default/Index">
         Globetrotter
       </a></h1>
-      <!-- if logo is image enable this   
-      <a class="navbar-brand" href="#index.html">
-        <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-      </a> -->
       <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
               data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
               aria-label="Toggle navigation">
@@ -30,28 +25,16 @@
           <li class="nav-item">
             <a class="nav-link" href="~/Traversal-Liberty/pricing.html">Pakker</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-              Blog<span class="fa fa-angle-down"></span>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-              <a class="dropdown-item" href="~/Traversal-Liberty/blog.html">Blogginnlegg</a>
-              <a class="dropdown-item" href="~/Traversal-Liberty/blog-single.html">Enkelt Blogginnlegg</a>
-              <a class="dropdown-item" href="~/Traversal-Liberty/landing-single.html">Landingsside</a>
-            </div>
-          </li>
-
           <li class="nav-item">
-            <a class="nav-link" href="~/Traversal-Liberty/contact.html">Kontakt</a>
+            <a class="nav-link" href="/Admin/Dashboard/Index/">Admin</a>
           </li>
-
         </ul>
       </div>
+
       <div class="d-lg-block d-none">
-        <a href="~/Traversal-Liberty/contact.html" class="btn btn-style btn-secondary">Kom i kontakt</a>
+        <a href="#" class="btn btn-style btn-secondary">Kontakt oss</a>
       </div>
-      <!-- toggle switch for light and dark theme -->
+
       <div class="mobile-position">
         <nav class="navigation">
           <div class="theme-switch-wrapper">
@@ -65,10 +48,8 @@
           </div>
         </nav>
       </div>
-        <partial name="_LoginPartial"/>
-      <!-- //toggle switch for light and dark theme -->
+      
+      <partial name="_LoginPartial"/>
     </nav>
-    
   </div>
-  
-  </header>
+</header>

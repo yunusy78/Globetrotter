@@ -6,7 +6,5 @@ namespace DataAccess.Repository;
 
 public class EfGuideDal : GenericRepository<Guide> , IGuideDal
 {
-    public EfGuideDal(Context context) : base(context)
-    {
-    }
+   
 }

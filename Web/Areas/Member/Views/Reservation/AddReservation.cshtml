@@ -1,0 +1,32 @@
+﻿@model Entity.Concrete.Reservation
+
+@{
+    ViewBag.Title = "Add reservation";
+    Layout = "_AppUserLayout";
+
+}
+
+<div class="container">
+    <h2>Opprett Ny Reservasjon</h2>
+    <form asp-controller="Reservation" asp-action="AddReservation" asp-area="Member" method="post">
+        <div class="form-group">
+            <label for="title">Antall Personer:</label>
+            <input type="number" id="title" asp-for="PersonCount" class="form-control">
+            <span asp-validation-for="PersonCount" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="content">Reservasjonsdato:</label>
+            <input id="content" type="date" asp-for="ReservationDate" class="form-control" required>
+            <span asp-validation-for="ReservationDate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="DestinationId">Destinasjon:</label>
+            @Html.DropDownListFor(x => x.DestinationId, (List<SelectListItem>)ViewBag.Destination, new { @class = "form-control" })
+
+        </div>
+
+        <button type="submit" class="btn btn-primary"> <i class="mdi mdi-content-save"></i> Opprett Reservasjon</button>
+        <button asp-action="Index" asp-controller="Reservation" class="btn btn-light"><i class="mdi mdi-close"></i> Cancel</button>
+    </form>
+</div>
