@@ -1,0 +1,39 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+
+<h3>Destinasjonsliste Pdf</h3>
+
+<button class="btn btn-primary" onclick="downloadPdf()"><i class="bx bx-download"></i>  Last Ned Pdf</button>
+
+
+<script>
+    function downloadPdf() {
+        var confirmMessage = "Er du sikker på at du vil laste det ned?";
+        if (confirm(confirmMessage)) {
+            window.location.href = "/Admin/PdfReport/ExportDestinationPdf";
+        }
+        return false;
+    }
+</script>
+
+<br/>
+<br/>
+
+<h3>Kunde liste Pdf</h3>
+
+<button class="btn btn-primary" onclick="downloadPdf()"><i class="bx bx-download"></i>  Last Ned Pdf</button>
+
+
+<script>
+    function downloadPdf() {
+        var confirmMessage = "Er du sikker på at du vil laste det ned?";
+        if (confirm(confirmMessage)) {
+            window.location.href = "/Admin/PdfReport/CustomerPdf";
+        }
+        return false;
+    }
+</script>

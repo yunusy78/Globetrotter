@@ -1,8 +1,11 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.ValidationRules;
 using DataAccess.Abstract;
 using DataAccess.EntityFramework;
 using DataAccess.Repository;
+using DTO.DTOs.AnnouncementDTOs;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Business.Container;
@@ -33,6 +36,20 @@ public static class ManagerService
        Services.AddScoped<ISubFeatureDal, EfSubFeatureDal>();
        Services.AddScoped<IContactDal, EfContactDal>();
        Services.AddScoped<IContactService, ContactManager>();
+       Services.AddScoped<IExelService, ExelManager>();
+       Services.AddScoped<INewsletterService, NewsletterManager>();
+       Services.AddScoped<INewsletterDal, EfNewsletterDal>();
+       Services.AddScoped<IMessageDal, EfMessageDal>();
+       Services.AddScoped<IMessageService, MessageManager>();
+       
+       Services.AddScoped<IAnnouncementService, AnnouncementManager>();
+       Services.AddScoped<IAnnouncementDal, EfAnnouncementDal>();
+    }
+    
+    public static void CustomValidator(this IServiceCollection services)
+    {
+        services.AddTransient<IValidator<AnnouncementAddDTO>, AnnouncementValidator>();
+        services.AddTransient<IValidator<AnnouncementUpdateDto>, AnnouncementUpdateValidator>();
     }
     
 }

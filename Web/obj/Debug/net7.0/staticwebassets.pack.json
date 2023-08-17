@@ -17,6 +17,14 @@
       "PackagePath": "staticwebassets\\ImageFile\\Destination\\94453c42-ea57-4a93-a6d0-c028810df128.jpeg"
     },
     {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\ImageFile\\Guide\\3288f9e9-6d39-488f-9e15-0399c6110bd0.jpg",
+      "PackagePath": "staticwebassets\\ImageFile\\Guide\\3288f9e9-6d39-488f-9e15-0399c6110bd0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\ImageFile\\Guide\\63497367-51a5-4aa0-a160-4cddf9099335.jpg",
+      "PackagePath": "staticwebassets\\ImageFile\\Guide\\63497367-51a5-4aa0-a160-4cddf9099335.jpg"
+    },
+    {
       "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\ImageFile\\Profile\\2ca62da9-51f9-480a-b36d-186c3af13702.jpg",
       "PackagePath": "staticwebassets\\ImageFile\\Profile\\2ca62da9-51f9-480a-b36d-186c3af13702.jpg"
     },
@@ -463,6 +471,14 @@
     {
       "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\Login_v1\\vendor\\tilt\\tilt.jquery.min.js",
       "PackagePath": "staticwebassets\\Login_v1\\vendor\\tilt\\tilt.jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\Pdf\\CustomerPdf.pdf",
+      "PackagePath": "staticwebassets\\Pdf\\CustomerPdf.pdf"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\Pdf\\DestinationPdf.pdf",
+      "PackagePath": "staticwebassets\\Pdf\\DestinationPdf.pdf"
     },
     {
       "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\Traversal-Liberty\\about.html",
@@ -999,6 +1015,26 @@
     {
       "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\curved6.jpg",
       "PackagePath": "staticwebassets\\curved6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\email_templates\\action.html",
+      "PackagePath": "staticwebassets\\email_templates\\action.html"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\email_templates\\alert.html",
+      "PackagePath": "staticwebassets\\email_templates\\alert.html"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\email_templates\\billing.html",
+      "PackagePath": "staticwebassets\\email_templates\\billing.html"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\email_templates\\img\\header.jpg",
+      "PackagePath": "staticwebassets\\email_templates\\img\\header.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\email_templates\\styles.css",
+      "PackagePath": "staticwebassets\\email_templates\\styles.css"
     },
     {
       "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\favicon.ico",

@@ -1,0 +1,79 @@
+﻿@model Entity.Concrete.Guide
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+
+
+<html>
+<head>
+    <style>
+        .custom-form {
+        	border: 1px solid #ccc;
+        	padding: 20px;
+        	border-radius: 10px;
+        	margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 custom-form">
+            <h1 class="text-center">Ny Guide</h1>
+            <form asp-controller="Guide" asp-action="Add" asp-area="Admin" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">Navn:</label>
+                    <input type="text" id="title" asp-for="FullName" class="form-control"  placeholder="Navn" required="">
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">E Post:</label>
+                    <input type="text" id="title" asp-for="Email" class="form-control"  placeholder="E Post" required="">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">FacebookUrl</label>
+                    <input type="text" id="title" asp-for="FacebookUrl" class="form-control"placeholder="FacebookUrl">
+                    <span asp-validation-for="FacebookUrl" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">TwitterUrl</label>
+                    <input type="text" id="title" asp-for="TwitterUrl" class="form-control"  placeholder="TwitterUrl">
+                    <span asp-validation-for="TwitterUrl" class="text-danger"></span>
+                </div>
+                 <br/>
+                <div class="form-group">
+                    <label for="title">InstagramUrl</label>
+                    <input type="text" id="title" asp-for="InstagramUrl" rows="5" class="form-control"  placeholder="InstagramUrl">
+                    <span asp-validation-for="InstagramUrl" class="text-danger"></span>
+                </div>
+                
+                <br/>
+                <div class="form-group">
+                    <label for="title">Beskrivelse:</label>
+                    <textarea type="text" id="title" asp-for="Description" rows="4" class="form-control" placeholder="Beskrivelse"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="mb-3">
+                    <label asp-for="ImageUrl">Velg Bilde 1:</label>
+                    <input type="file" id="uploadBox" name="file1" class="form-control"/>
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-warning"><i class="fa fa-edit"></i> Lagre</button>
+                </div>
+                <br/>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

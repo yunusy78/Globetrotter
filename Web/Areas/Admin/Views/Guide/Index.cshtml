@@ -5,8 +5,6 @@
     Layout = "_AdminLayout";
     int i = 0;
 }
-
-<br/>
 <div class="table-responsive text-nowrap">
 </div>
 
@@ -23,6 +21,7 @@
                 <th>Navn</th>
                 <th>E Posta</th>
                 <th>Beskrivelse</th>
+                <th>Actions</th>
                 <th>Actions</th>
                 <th>Actions</th>
                 <th>Actions</th>
@@ -54,7 +53,7 @@
                         <a class="dropdown-item" href="/Destination/Details/@item.Id/"><i class="bx bx-info-circle me-1 text-success"></i> Detaljer</a>
                     </td>
                     <td>
-                        <a class="dropdown-item" href="/Admin/AdminDestination/Edit/@item.Id"><i class="bx bx-edit-alt me-1 text-warning"></i> Rediger</a>
+                        <a class="dropdown-item" href="/Admin/Guide/Update/@item.Id"><i class="bx bx-edit-alt me-1 text-warning"></i> Rediger</a>
                     </td>
                     <td>
                         <a class="dropdown-item" href="javascript:void(0);" onclick="showDeleteConfirmation('@item.Id')"><i class="bx bx-trash me-1 text-danger"></i> Slette</a>
@@ -68,7 +67,7 @@
         </table>
         <br/>
         <br/>
-        <button class="btn btn-primary" onclick="window.location.href='/Admin/AdminDestination/Add'"><i class="fa fa-plus"></i> Legg til ny destinasjon</button>
+        <button class="btn btn-primary" onclick="window.location.href='/Admin/Guide/Add'"><i class="fa fa-plus"></i> Legg til en ny Guide</button>
         <br/>
         <br/>
         <br/>

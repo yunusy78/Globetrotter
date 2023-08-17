@@ -28,6 +28,10 @@ public class Context :IdentityDbContext<ApplicationUser>
     
     public DbSet<Reservation> Reservations { get; set; }
     
+    public DbSet<Message> Messages { get; set; }
+    
+    public DbSet<Announcement> Announcements { get; set; }
+    
 
     
     

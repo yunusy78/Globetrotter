@@ -15,11 +15,16 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        
+        var date = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+        _logger.LogInformation("Index sayfasına giriş yapıldı."+date);
+        _logger.LogError("Error"+date);
         return View();
     }
 
     public IActionResult Privacy()
     {
+        _logger.LogInformation("Privacy sayfasına giriş yapıldı.");
         return View();
     }
 
@@ -28,4 +33,11 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+    
+    public IActionResult Test()
+    {
+        _logger.LogInformation("Test sayfasına giriş yapıldı.");
+        return View();
+    }
 }
+

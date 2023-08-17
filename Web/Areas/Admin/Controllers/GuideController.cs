@@ -1,4 +1,7 @@
 ﻿using Business.Abstract;
+using Business.ValidationRules;
+using Entity.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Areas.Admin.Controllers;
@@ -43,4 +46,95 @@ public class GuideController : Controller
         _guideService.Delete(guide);
         return RedirectToAction("Index");
     }
+    
+     public IActionResult Add()
+    {
+        return View();
+    }
+    
+    
+    [HttpPost]
+    public  IActionResult Add(Guide model, IFormFile? file1)
+    {
+        GuideValidator validator = new GuideValidator();
+        ValidationResult result = validator.Validate(model);
+        if (result.IsValid)
+        {
+
+            if (file1 != null)
+            {
+                var extension = Path.GetExtension(file1.FileName);
+                var newImageName = Guid.NewGuid() + extension;
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ImageFile/Guide/" + newImageName);
+                var stream = new FileStream(location, FileMode.Create);
+                file1.CopyToAsync(stream);
+                model.ImageUrl = @"/ImageFile/Guide/" + newImageName;
+            }
+            else
+            {
+                model.ImageUrl = "default.png ";
+            }
+
+            model.Status = true;
+            _guideService.Add(model);
+            return RedirectToAction("Index");
+        }
+        else
+        {
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+            }
+        }
+        
+        return View();
+
+    }
+    
+    public IActionResult Update(Guid id)
+    {
+        var model = _guideService.GetById(id);
+        return View(model);
+    }
+
+
+    [HttpPost]
+    public IActionResult Update(Guide model, IFormFile file1)
+    {
+        GuideValidator validator = new GuideValidator();
+        ValidationResult result = validator.Validate(model);
+        if (result.IsValid)
+        {
+            if (file1 != null)
+            {
+                var extension = Path.GetExtension(file1.FileName);
+                var newImageName = Guid.NewGuid() + extension;
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ImageFile/Guide/" + newImageName);
+                var stream = new FileStream(location, FileMode.Create);
+                file1.CopyToAsync(stream);
+                model.ImageUrl = @"/ImageFile/Guide/" + newImageName;
+            }
+            else
+            {
+                model.ImageUrl = model.ImageUrl;
+            }
+
+            model.Status = model.Status;
+            _guideService.Update(model);
+            return RedirectToAction("Index");
+
+        }
+        else
+        {
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+            }
+        }
+
+        return View();
+    }
+    
+    
+
 }

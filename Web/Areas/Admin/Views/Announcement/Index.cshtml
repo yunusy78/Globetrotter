@@ -1,0 +1,62 @@
+﻿@model List<DTO.DTOs.AnnouncementDTOs.AnnouncementListDto>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+    int i = 0;
+}
+
+<br/>
+<div class="table-responsive text-nowrap">
+</div>
+<div class="card">
+    <h3 class="card-header" style="text-align: center">Kunngjøring</h3>
+    <div class="table-responsive text-nowrap">
+      
+        <table class="table">
+            <thead class="table-primary">
+            <tr>
+                <th>#</th>
+                <th>Id</th>
+                <th>Tittel</th>
+                <th>Inhold</th>
+                <th>Actions</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @{ i = i + 1; }
+                    <td>@i</td>
+                    <td>@item.Id</td>
+                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@item.Title</strong></td>
+                    <td><span class="badge bg-label-primary me-1">@item.Content</span></td>
+                    <td>
+                        <a class="dropdown-item" href="/Admin/Announcement/Update/@item.Id"><i class="bx bx-edit-alt me-1 text-warning"></i> Rediger</a>
+                    </td>
+
+                    <td>
+                        <a class="dropdown-item" href="javascript:void(0);" onclick="showDeleteConfirmation('@item.Id')"><i class="bx bx-trash me-1 text-danger"></i> Slette</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+    </div>
+</div>
+
+<script>
+    function showDeleteConfirmation(id) {
+        if (confirm("Er du sikker på at du vil slette dette?")) {
+            window.location.href = "/Admin/Announcement/Delete/" + id;
+        }
+    }
+</script>
+
+

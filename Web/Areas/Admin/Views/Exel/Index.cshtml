@@ -1,0 +1,57 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+
+<h3>Destinasjonsliste Excel</h3>
+
+<button class="btn btn-primary" onclick="downloadExcel()"><i class="bx bx-download"></i>  Last Ned Excel</button>
+
+
+<script>
+    function downloadExcel() {
+        var confirmMessage = "Er du sikker på at du vil laste det ned?";
+        if (confirm(confirmMessage)) {
+            window.location.href = "/Admin/Exel/RapportDestination";
+        }
+        return false;
+    }
+</script>
+
+<br/>
+<br/>
+
+
+<h3>Guideliste Excel</h3>
+
+<button class="btn btn-primary" onclick="downloadExcel()"> <i class="bx bx-download"></i>  Last Ned Exel</button>
+
+
+<script>
+    function downloadExcel() {
+        var confirmMessage = "Er du sikker på at du vil laste det ned?";
+        if (confirm(confirmMessage)) {
+            window.location.href = "/Admin/Exel/ExportStaticCsv";
+        }
+        return false;
+    }
+</script>
+
+
+
+<h3>Guideliste Excel </h3>
+
+<button class="btn btn-primary" onclick="downloadExcel()"> <i class="bx bx-download"></i>  Last Ned Exel</button>
+
+
+<script>
+    function downloadExcel() {
+        var confirmMessage = "Er du sikker på at du vil laste det ned?";
+        if (confirm(confirmMessage)) {
+            window.location.href = "/Admin/Exel/ManagerReport";
+        }
+        return false;
+    }
+</script>

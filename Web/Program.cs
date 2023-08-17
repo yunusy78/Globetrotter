@@ -2,11 +2,15 @@ using System.Configuration;
 using Business.Abstract;
 using Business.Concrete;
 using Business.Container;
+using Business.ValidationRules;
 using DataAccess.Abstract;
 using DataAccess.Concrete;
 using DataAccess.EntityFramework;
 using DataAccess.Repository;
+using DTO.DTOs.AnnouncementDTOs;
 using Entity.Concrete;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -26,6 +30,28 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.LogoutPath = $"/Identity/Account/Logout";
     options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
 });
+
+builder.Services.AddLogging(x =>
+{
+    x.ClearProviders();
+    x.SetMinimumLevel(LogLevel.Debug);
+    x.AddDebug();
+
+});
+
+/*var path = Directory.GetCurrentDirectory();
+
+ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
+{
+    builder.AddFile($"{path}\\Logs\\log.txt", isJson: false);
+    // Add other logging providers here if needed, such as a console logger
+    builder.AddConsole();
+});*/
+
+builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.CustomValidator();
+builder.Services.AddControllersWithViews().AddFluentValidation();
+
 
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
