@@ -48,6 +48,7 @@ ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
     builder.AddConsole();
 });*/
 
+builder.Services.AddHttpClient();
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.CustomValidator();
 builder.Services.AddControllersWithViews().AddFluentValidation();

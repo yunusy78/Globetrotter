@@ -1,0 +1,86 @@
+﻿@model System.Collections.Generic.List<Web.Areas.Admin.Models.VisitorViewModel>?
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+    int i = 0;
+}
+<div class="table-responsive text-nowrap">
+</div>
+
+<div class="card">
+    <h3 class="card-header" style="text-align: center;">Visitor API</h3>
+    <div class="table-responsive text-nowrap">
+      
+        <table class="table">
+            <thead class="table-primary">
+            <tr>
+                <th>#</th>
+                <th>Id</th>
+                <th>Navn</th>
+                <th>E-Post</th>
+                <th>Bedrift</th>
+                <th>Telefonnummer</th>
+                <th>Notater</th>
+                <th>CheckIn</th>
+                <th>CheckOut </th>
+                <th>Actions</th>
+                <th>Actions</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @{i = i + 1;}
+                    <td>@i</td>
+                    <td>@item.Id</td>
+                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@item.Name</strong></td>
+                    <td>@item.Email</td>
+                    <td>@item.Phone</td>
+                    <td>@item.Company</td>
+                    <td><span class="badge bg-label-primary me-1">@item.Notes</span></td>
+                    <td>@item.CheckIn</td>
+                    <td>@item.CheckOut</td>
+                    
+                    @if (item.IsCheckedOut == true)
+                    {
+                        <td><a href="/Admin/Guide/Passive/@item.Id" class="btn btn-outline-danger" >Gjør Deaktiver</a></td>
+                    }
+                    else
+                    {
+                        <td><a href="/Admin/Guide/Active/@item.Id" class="btn btn-outline-success" >Gjør Aktiver</a></td>
+                    }
+                    <td>
+                        <a class="dropdown-item" href="/Admin/VisitorApi/Update/@item.Id"><i class="bx bx-edit-alt me-1 text-warning"></i> Rediger</a>
+                    </td>
+                    <td>
+                        <a class="dropdown-item" href="javascript:void(0);" onclick="showDeleteConfirmation('@item.Id')"><i class="bx bx-trash me-1 text-danger"></i> Slette</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+        <br/>
+        <br/>
+        <div class="form-control">
+            <button class="btn btn-primary" onclick="window.location.href='/Admin/VisitorApi/Add'"><i class="bx bx-plus"></i> Legg til en ny Besøkende</button>
+        </div>
+      
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        
+    </div>
+</div>
+
+<script>
+    function showDeleteConfirmation(id) {
+        if (confirm("Er du sikker på at du vil slette dette?")) {
+            window.location.href = "/Admin/VisitorApi/Delete/" + id;
+        }
+    }
+</script>
+

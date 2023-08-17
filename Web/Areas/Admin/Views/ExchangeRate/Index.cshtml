@@ -1,0 +1,107 @@
+﻿@model Web.Areas.Admin.Models.ExchangeRate
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+<html>
+<head>
+    <style>
+        .custom-form {
+        	border: 1px solid #ccc;
+        	padding: 20px;
+        	border-radius: 10px;
+        	margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 custom-form">
+<h1>Exchange Rate Converter</h1>
+    <form method="post">
+        <div class="form-group">
+            <label for="haveCurrency">Have Currency:</label>
+            <select id="haveCurrency" name="haveCurrency" class="form-control">
+                <option value="">Select Currency</option>
+                <option value="EUR">Euro (EUR)</option>
+                <option value="USD">US Dollar (USD)</option>
+                <option value="GBP">British Pound (GBP)</option>
+                <option value="JPY">Japanese Yen (JPY)</option>
+                <option value="CAD">Canadian Dollar (CAD)</option>
+                <option value="AUD">Australian Dollar (AUD)</option>
+                <option value="CHF">Swiss Franc (CHF)</option>
+                <option value="CNY">Chinese Yuan (CNY)</option>
+                <option value="SEK">Swedish Krona (SEK)</option>
+                <option value="NZD">New Zealand Dollar (NZD)</option>
+                <option value="TRY">Turkish Lira (TRY)</option>
+                <option value="SEK">Swedish Krona (SEK)</option>
+                <option value="DKK">Danish Krone (DKK)</option>
+               <option value="NOK">Norwegian Krone (NOK)</option>
+            </select>
+        </div>
+         <br/>
+         <br/>
+         
+        <div class="form-group">
+            <label for="wantCurrency">Want Currency:</label>
+            <select id="wantCurrency" name="wantCurrency" class="form-control">
+                <option value="">Select Currency</option>
+                <option value="EUR">Euro (EUR)</option>
+                <option value="USD">US Dollar (USD)</option>
+                <option value="GBP">British Pound (GBP)</option>
+                <option value="JPY">Japanese Yen (JPY)</option>
+                <option value="CAD">Canadian Dollar (CAD)</option>
+                <option value="AUD">Australian Dollar (AUD)</option>
+                <option value="CHF">Swiss Franc (CHF)</option>
+                <option value="CNY">Chinese Yuan (CNY)</option>
+                <option value="SEK">Swedish Krona (SEK)</option>
+                <option value="NZD">New Zealand Dollar (NZD)</option>
+                <option value="TRY">Turkish Lira (TRY)</option>
+                <option value="SEK">Swedish Krona (SEK)</option>
+                <option value="DKK">Danish Krone (DKK)</option>
+               <option value="NOK">Norwegian Krone (NOK)</option>
+            </select>
+        </div>
+        <br/>
+        <br/>
+    <div class="form-group">
+        <label for="wantCurrency">Amount:</label>
+        <input type="number" id="amount" name="amount" class="form-control" />
+    </div>
+     <br/>
+    <button type="submit" class="btn btn-primary">Convert</button>
+</form>
+<br/>
+        <div class="card">
+            <h3 class="card-header" style="text-align: center;">Currency</h3>
+            <div class="table-responsive text-nowrap">
+      
+                <table class="table">
+                    <thead class="table-primary">
+                    <tr>
+                        <th>Old Currency</th>
+                        <th>New Currency</th>
+                        <th>Old Amount</th>
+                        <th>New Amount</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+            
+                    <td>@Model.New_currency</td>
+                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@Model.Old_currency</strong></td>
+                    <td>@Model.Old_amount</td>
+                    <td><span class="badge bg-label-primary me-1"><strong>@Model.New_amount</strong></span></td>
+   
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        
+        </div>
+    </div>
+</div>
+</body>
+</html>

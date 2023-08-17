@@ -1,0 +1,71 @@
+﻿@model VisitorViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+
+<html>
+<head>
+    <style>
+        .custom-form {
+        	border: 1px solid #ccc;
+        	padding: 20px;
+        	border-radius: 10px;
+        	margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 custom-form">
+            <h1 class="text-center">Ny Besøkende</h1>
+            <form asp-controller="VisitorApi" asp-action="Add" asp-area="Admin" method="post" >
+                <div class="form-group">
+                    <label for="title">Navn:</label>
+                    <input type="text" id="title" asp-for="Name" class="form-control"  placeholder="Navn" required="">
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">E-Post:</label>
+                    <input type="text" id="title" asp-for="Email" class="form-control"  placeholder="E-Post" required="">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">Telefonnummer: </label>
+                    <input type="text" id="title" asp-for="Phone" class="form-control"placeholder="Telefonnummer">
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">Bedrift: </label>
+                    <input type="text" id="title" asp-for="Company" class="form-control"  placeholder="Bedrift">
+                    <span asp-validation-for="Company" class="text-danger"></span>
+                </div>
+                 <br/>
+                <div class="form-group">
+                    <label for="title">Sjekke inn</label>
+                    <input type="date" id="title" asp-for="CheckIn" rows="3" class="form-control"  placeholder="Sjekke inn">
+                </div>
+                <div class="form-group">
+                    <label for="title">Sjekk ut</label>
+                    <input type="date" id="title" asp-for="CheckOut" rows="3" class="form-control"  placeholder="Sjekk ut">
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">Notater:</label>
+                    <textarea type="text" id="title" asp-for="Notes" rows="4" class="form-control" placeholder="Notater"></textarea>
+                </div>
+                <br/>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary"><i class="bx bx-save"></i> Lagre</button>
+                </div>
+                <br/>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
