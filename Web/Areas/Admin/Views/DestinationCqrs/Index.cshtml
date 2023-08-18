@@ -1,0 +1,74 @@
+﻿@model System.Collections.Generic.List<Web.CQRS.Result.DestinationResult.GetAllDestinationQueryResult>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AppUserLayout";
+  int i = 0;
+}
+
+<h2>CQRS VERDIER</h2>
+
+<div class="row">
+        <div class="col-12">
+          <div class="card mb-4">
+            <div class="card-header pb-0">
+              <h6>CQRS Destinasjoner </h6>
+            </div>
+            <div class="card-body px-0 pt-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center justify-content-center mb-0">
+                  <thead>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">#</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Destinasjon</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Antall Personer</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Pris</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Dag-Natt</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Slette</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Redigere</th>
+                    <th></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  @foreach(var item in Model)
+                  {
+                    <tr>
+                      @{i = i + 1;}
+                      <td>
+                        <div class="d-flex px-2">
+                          @i
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-xs font-weight-bold">@item.City</p>
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold">@item.Capacity</span>
+                      </td>
+                      <td >
+                        <span class="text-xs font-weight-bold">NOK @item.Price</span>
+                      </td>
+                      <td >
+                        <span class="text-xs font-weight-bold">@item.DayNight</span>
+                      </td>
+                      <td >
+                        <a href="/Member/DestinationCqrs/Delete/@item.Id" class="text-xs font-weight-bold"><i class="fa fa-trash"></i> Slette</a>
+                      </td>
+
+                      <td >
+                        <a href="/Member/DestinationCqrs/Details/@item.Id" class="text-xs font-weight-bold"><i class="fa fa-edit"></i> Rediger</a>
+                      </td>
+
+                    </tr>
+                  }
+                  </tbody>
+                </table>
+                  <button href="/Member/DestinationCqrs/Add" class="btn btn-outline-primary ">Add Destination</button>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+
+

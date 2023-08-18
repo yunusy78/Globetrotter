@@ -1,0 +1,60 @@
+﻿@model Web.CQRS.Commants.DestinationCommands.CreateDestinationCommand
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AppUserLayout";
+}
+
+<html>
+<head>
+    <title> </title>
+    <style>
+        .custom-form {
+        	border: 1px solid #ccc;
+        	padding: 20px;
+        	border-radius: 10px;
+        	margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 custom-form">
+            <h1 class="text-center">Legge til Destinasjon</h1>
+            <form asp-controller="AdminDestination" asp-action="Add" asp-area="Admin" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">City:</label>
+                    <input type="text" id="title" asp-for="City" class="form-control"  placeholder="City" required="">
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">Dag-Natt:</label>
+                    <input type="text" id="title" asp-for="DayNight" class="form-control"  placeholder="Dag-Natt" required="">
+                    <span asp-validation-for="DayNight" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">Pris:</label>
+                    <input type="number" id="title" asp-for="Price" class="form-control"placeholder="Pris">
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">Antall Kapasitet</label>
+                    <input type="number" id="title" asp-for="Capacity" class="form-control"  placeholder="Antall Kapasitet">
+                    <span asp-validation-for="Capacity" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-warning"><i class="fa fa-save"></i> Lagre</button>
+                </div>
+                <br/>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

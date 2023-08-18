@@ -1,0 +1,58 @@
+﻿@model Web.CQRS.Result.DestinationResult.GetDestinationByIdQueryResult
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AppUserLayout";
+}
+
+<h2>Opdater Destinasjon</h2>
+
+<html>
+<head>
+    <title>Oppdater Profil </title>
+    <style>
+        .custom-form {
+        	border: 1px solid #ccc;
+        	padding: 20px;
+        	border-radius: 10px;
+        	margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 custom-form">
+            <h1 class="text-center">Opdater Destinasjon</h1>
+            <form method="post" >
+                 <div class="form-group">
+                                   <label for="title">Destinasjon:</label>
+                                   <input type="text" id="title" asp-for="City" class="form-control" value="@Model.City"  placeholder="City">
+                                   <span asp-validation-for="City" class="text-danger"></span>
+                               </div>
+                               <br/>
+                               <div class="form-group">
+                                   <input type="hidden" id="title" asp-for="Id" class="form-control" value="@Model.Id"  placeholder="City">
+                               </div>
+                               <div class="form-group">
+                                   <label for="title">Dag-Natt:</label>
+                                   <input type="text" id="title" asp-for="DayNight" class="form-control" value="@Model.DayNight"  placeholder="Dag-Natt">
+                                   <span asp-validation-for="DayNight" class="text-danger"></span>
+                               </div>
+                               <br/>
+                               
+                               <div class="form-group">
+                                   <label for="title">Pris:</label>
+                                   <input type="number" id="title" asp-for="Price" class="form-control" value="@Model.Price" placeholder="Pris">
+                                   <span asp-validation-for="Price" class="text-danger"></span>
+                               </div>
+                               <br/>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-warning"><i class="fa fa-edit"></i> Lagre</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
