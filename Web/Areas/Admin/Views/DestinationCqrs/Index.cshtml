@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "title";
-    Layout = "_AppUserLayout";
+    Layout = "_AdminLayout";
   int i = 0;
 }
 
@@ -10,14 +10,12 @@
 
 <div class="row">
         <div class="col-12">
-          <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h6>CQRS Destinasjoner </h6>
-            </div>
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-0">
-                <table class="table align-items-center justify-content-center mb-0">
-                  <thead>
+        <div class="card">
+            <h3 class="card-header" style="text-align: center;">Vår Destinasjoner</h3>
+            <div class="table-responsive text-nowrap">
+              
+                <table class="table">
+                    <thead class="table-primary">
                   <tr>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">#</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Destinasjon</th>
@@ -52,23 +50,21 @@
                         <span class="text-xs font-weight-bold">@item.DayNight</span>
                       </td>
                       <td >
-                        <a href="/Member/DestinationCqrs/Delete/@item.Id" class="text-xs font-weight-bold"><i class="fa fa-trash"></i> Slette</a>
+                        <a href="/Admin/DestinationCqrs/Delete/@item.Id" class="dropdown-item"><i class="bx bx-trash me-1 text-danger"></i> Slette</a>
                       </td>
 
                       <td >
-                        <a href="/Member/DestinationCqrs/Details/@item.Id" class="text-xs font-weight-bold"><i class="fa fa-edit"></i> Rediger</a>
+                        <a href="/Admin/DestinationCqrs/Details/@item.Id" class="dropdown-item"><i class="bx bx-edit-alt me-1 text-warning"></i> Rediger</a>
                       </td>
 
                     </tr>
                   }
                   </tbody>
                 </table>
-                  <button href="/Member/DestinationCqrs/Add" class="btn btn-outline-primary ">Add Destination</button>
+              <button class="btn btn-primary" onclick="window.location.href='/Admin/DestinationCqrs/Add'"><i class="fa fa-plus"></i> Legg til en ny Destinasjon</button>
               </div>
             </div>
           
           </div>
         </div>
-      </div>
-
 

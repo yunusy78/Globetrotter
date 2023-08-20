@@ -20,4 +20,10 @@ public class EfCommentDal : GenericRepository<Comment>, ICommentDal
         using var _context = new Context();
         return _context.Comments.Include(x => x.Destination).ToList();
     }
+
+    public List<Comment> GetListWithDestinationAndApplicationUser()
+    {
+        using var _context = new Context();
+        return _context.Comments.Include(x => x.Destination).Include(x => x.User).ToList();
+    }
 }

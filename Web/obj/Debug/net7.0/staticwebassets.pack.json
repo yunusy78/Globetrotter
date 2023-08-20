@@ -5,6 +5,26 @@
       "PackagePath": "staticwebassets\\Web.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\ImageFile\\About\\istockphoto-155439315-612x612.jpg",
+      "PackagePath": "staticwebassets\\ImageFile\\About\\istockphoto-155439315-612x612.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\ImageFile\\About\\pngtree-airplane-sailing-towards-the-sun-png-image_2214273.jpg",
+      "PackagePath": "staticwebassets\\ImageFile\\About\\pngtree-airplane-sailing-towards-the-sun-png-image_2214273.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\ImageFile\\Destination\\0e15fc23-53fb-4823-8fca-7d5d3b774239.jpg",
+      "PackagePath": "staticwebassets\\ImageFile\\Destination\\0e15fc23-53fb-4823-8fca-7d5d3b774239.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\ImageFile\\Destination\\3fb103d4-768c-4e65-b7a5-79622cdc4e30.jpeg",
+      "PackagePath": "staticwebassets\\ImageFile\\Destination\\3fb103d4-768c-4e65-b7a5-79622cdc4e30.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\ImageFile\\Destination\\4062.jpeg",
+      "PackagePath": "staticwebassets\\ImageFile\\Destination\\4062.jpeg"
+    },
+    {
       "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\ImageFile\\Destination\\7049552d-8f8d-4591-a1b0-858ab04892c6.jpeg",
       "PackagePath": "staticwebassets\\ImageFile\\Destination\\7049552d-8f8d-4591-a1b0-858ab04892c6.jpeg"
     },
@@ -17,8 +37,20 @@
       "PackagePath": "staticwebassets\\ImageFile\\Destination\\94453c42-ea57-4a93-a6d0-c028810df128.jpeg"
     },
     {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\ImageFile\\Destination\\dd221eba-98d5-4f0c-b8e2-03774f6dddb7.jpeg",
+      "PackagePath": "staticwebassets\\ImageFile\\Destination\\dd221eba-98d5-4f0c-b8e2-03774f6dddb7.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\ImageFile\\Guide\\0c7645e7-9dc7-4ba5-a7b9-6a174fb66106.jpg",
+      "PackagePath": "staticwebassets\\ImageFile\\Guide\\0c7645e7-9dc7-4ba5-a7b9-6a174fb66106.jpg"
+    },
+    {
       "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\ImageFile\\Guide\\3288f9e9-6d39-488f-9e15-0399c6110bd0.jpg",
       "PackagePath": "staticwebassets\\ImageFile\\Guide\\3288f9e9-6d39-488f-9e15-0399c6110bd0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\ImageFile\\Guide\\55aa4409-ad3f-4d5e-b689-b20dfb5bb354.jpg",
+      "PackagePath": "staticwebassets\\ImageFile\\Guide\\55aa4409-ad3f-4d5e-b689-b20dfb5bb354.jpg"
     },
     {
       "Id": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\wwwroot\\ImageFile\\Guide\\63497367-51a5-4aa0-a160-4cddf9099335.jpg",

@@ -1,0 +1,20 @@
+﻿@model List<Entity.Concrete.About>
+
+<section class="w3l-cta4 py-5">
+    <div class="container py-lg-5">
+         @foreach(var item in Model)
+         {
+        <div class="ab-section text-center">
+            <h6 class="sub-title">Om Oss</h6>
+            <h3 class="hny-title">@item.Description</h3>
+            <p class="py-3 mb-3">@item.Description2</p>
+        </div>
+         <div class="row mt-5">
+             <div class="col-md-9 mx-auto">
+                 <img src="@item.ImageUrl" class="img-fluid" alt="">
+             </div>
+         </div>
+         }
+    </div>
+</section>
+

@@ -1,0 +1,48 @@
+﻿@model System.Collections.Generic.List<Entity.Concrete.Guide>
+
+<div class="author-card mt-5">
+    <h2 class="text-center mt-5" style="color: #f6273a">Reiseguider</h2>
+    <br/>
+    @foreach (var item in Model)
+    {
+        <div class="row align-items-center">
+            <div class="col-sm-3 col-6">
+                <div>
+                    <img src="@item.ImageUrl" alt="" class="rounded-circle img-fluid">
+                </div>
+            </div>
+            <div class="col-sm-9 mt-sm-0 mt-3">
+                <h3 class="mb-3 title">@item.FullName</h3>
+                <p>@item.Description
+                </p>
+                <ul class="author-icons mt-4">
+                    <li>
+                        <a class="facebook" href="@item.FacebookUrl">
+                            <span class="fa fa-facebook"
+                                  aria-hidden="true"></span></a> </li>
+                    <li>
+                        <a class="twitter" href="@item.TwitterUrl">
+                            <span class="fa fa-twitter"
+                                  aria-hidden="true"></span></a></li>
+                    <li>
+                        <a class="google" href="#u">
+                            <span class="fa fa-google-plus"
+                                  aria-hidden="true"></span></a></li>
+                    <li>
+                        <a class="-instagram" href="@item.InstagramUrl">
+                            <span class="fa fa-instagram"
+                                  aria-hidden="true"></span></a></li>
+                    <li>
+                        <a class="github" href="#url">
+                            <span class="fa fa-github"
+                                  aria-hidden="true"></span></a>
+                    </li>
+                    <li>
+                        <a class="dribbble" href="#url">
+                            <span class="fa fa-dribbble"
+                                  aria-hidden="true"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    }
+</div>

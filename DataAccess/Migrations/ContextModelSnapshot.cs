@@ -174,9 +174,15 @@ namespace DataAccess.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("DestinationId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Comments");
                 });
@@ -226,32 +232,24 @@ namespace DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("City")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("CoverImageUrl")
                         .HasColumnType("longtext");
 
                     b.Property<string>("DayNight")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Details1")
-                        .HasMaxLength(3000)
-                        .HasColumnType("varchar(3000)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Details2")
-                        .HasMaxLength(3000)
-                        .HasColumnType("varchar(3000)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("ImageUrl")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("ImageUrl2")
@@ -300,6 +298,9 @@ namespace DataAccess.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("longtext");
 
+                    b.Property<Guid>("DestinationId")
+                        .HasColumnType("char(36)");
+
                     b.Property<string>("Email")
                         .HasColumnType("longtext");
 
@@ -322,6 +323,8 @@ namespace DataAccess.Migrations
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DestinationId");
 
                     b.ToTable("Guides");
                 });
@@ -604,6 +607,25 @@ namespace DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Entity.Concrete.ApplicationUser", "User")
+                        .WithMany("Comments")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Destination");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Entity.Concrete.Guide", b =>
+                {
+                    b.HasOne("Entity.Concrete.Destination", "Destination")
+                        .WithMany("Guides")
+                        .HasForeignKey("DestinationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Destination");
                 });
 
@@ -677,12 +699,16 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Entity.Concrete.ApplicationUser", b =>
                 {
+                    b.Navigation("Comments");
+
                     b.Navigation("Reservations");
                 });
 
             modelBuilder.Entity("Entity.Concrete.Destination", b =>
                 {
                     b.Navigation("Comments");
+
+                    b.Navigation("Guides");
 
                     b.Navigation("Reservations");
                 });

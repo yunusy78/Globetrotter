@@ -1,0 +1,88 @@
+﻿@model System.Collections.Generic.List<Entity.Concrete.Guide>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_UserLayout";
+}
+<section class="w3l-about-breadcrumb text-left">
+  <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+    <div class="container py-2">
+      <h2 class="title">Om Oss</h2>
+      <ul class="breadcrumbs-custom-path mt-2">
+        <li><a href="#url">Hjem</a></li>
+        <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Om Oss </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="w3l-content-6 py-5">
+
+  <div class="container py-lg-5">
+    <div class="row">
+      <div class="col-lg-6 content-6-left pr-lg-5">
+        <h6 class="sub-title">Hvorfor velge oss</h6>
+        <h3 class="hny-title">Livet begynner i enden av komfortsonen din.</h3>
+      </div>
+      <div class="col-lg-6 content-6-right mt-lg-0 mt-4">
+        <p class="mb-3">Vi er Globetrotter, din pålitelige partner for eventyr. Her er hvorfor du bør velge oss:</p>
+        <ul class="list-unstyled">
+          <li><span class="fa fa-check"></span> Erfarne Guider: Vårt team av erfarne guider er klare til å lede deg gjennom uforglemmelige opplevelser.</li>
+          <li><span class="fa fa-check"></span> Varierte Destinasjoner: Uansett om du foretrekker fjell, strender eller byer, har vi en rekke destinasjoner å tilby.</li>
+          <li><span class="fa fa-check"></span> Personlig Service: Vi skreddersyr hvert eventyr for å passe dine behov og ønsker.</li>
+          <li><span class="fa fa-check"></span> Sikkerhet Fremst: Din sikkerhet er vår øverste prioritet, og vi tar alle nødvendige forholdsregler.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>"
+
+@await Component.InvokeAsync("AboutHome")
+
+<section class="w3l-team" id="team">
+  <div class="team-block py-5">
+    <div class="container py-lg-5">
+      <div class="title-content text-center mb-lg-3 mb-4">
+        <h6 class="sub-title">Vårt team</h6>
+        <h3 class="hny-title">Møt våre Guider</h3>
+      </div>
+      <div class="row">
+        @foreach (var item in Model)
+        {
+          <div class="col-lg-3 col-6 mt-lg-5 mt-4">
+            <div class="box16">
+              <a href="#url"><img src="@item.ImageUrl" alt="" class="img-fluid"/></a>
+              <div class="box-content">
+                <h3 class="title"><a href="#url">@item.FullName</a></h3>
+                <span class="post">@item.Description</span>
+                <span class="post">@item.Destination!.City</span>
+                <ul class="social">
+                  <li>
+                    <a href="@item.FacebookUrl" class="facebook">
+                      <span class="fa fa-facebook-f"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="@item.TwitterUrl" class="twitter">
+                      <span class="fa fa-twitter"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="@item.InstagramUrl" class="instagram">
+                      <span class="fa fa-instagram"></span>
+                    </a>
+                  </li>
+                    
+                </ul>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+ 

@@ -14,4 +14,8 @@ public class Comment
     [ForeignKey("DestinationId")]
     public Destination Destination { get; set; }
     
+    public string? UserId { get; set; }
+    [ForeignKey("UserId")]
+    public ApplicationUser User { get; set; }
+    
 }

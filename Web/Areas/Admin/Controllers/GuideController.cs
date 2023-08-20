@@ -3,6 +3,7 @@ using Business.ValidationRules;
 using Entity.Concrete;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Web.Areas.Admin.Controllers;
 
@@ -10,17 +11,20 @@ namespace Web.Areas.Admin.Controllers;
 public class GuideController : Controller
 {
     private readonly IGuideService _guideService;
+    private readonly IDestinationService _destinationService;
 
-    public GuideController(IGuideService guideService)
+    public GuideController(IGuideService guideService, IDestinationService destinationService)
     {
         _guideService = guideService;
+        _destinationService = destinationService;
     }
+  
 
 
     // GET
     public IActionResult Index()
     {
-        var model = _guideService.GetAll();
+        var model = _guideService.GetListWithDestination();
         return View(model);
     }
 
@@ -49,6 +53,13 @@ public class GuideController : Controller
     
      public IActionResult Add()
     {
+        List<SelectListItem> result = (from x in _destinationService.GetAll()
+            select new SelectListItem
+            {
+                Text = x.City,
+                Value = x.Id.ToString()
+            }).ToList();
+        ViewBag.Destination = result;
         return View();
     }
     
@@ -94,6 +105,13 @@ public class GuideController : Controller
     public IActionResult Update(Guid id)
     {
         var model = _guideService.GetById(id);
+        List<SelectListItem> result = (from x in _destinationService.GetAll()
+            select new SelectListItem
+            {
+                Text = x.City,
+                Value = x.Id.ToString()
+            }).ToList();
+        ViewBag.Destination = result;
         return View(model);
     }
 

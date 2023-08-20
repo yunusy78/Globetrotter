@@ -349,3 +349,6 @@ C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Web\
 C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Web\bin\Debug\net7.0\DTO.pdb
 C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Web\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Web\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Web\bin\Debug\net7.0\MediatR.dll
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Web\bin\Debug\net7.0\MediatR.Contracts.dll
+C:\Users\yunus\Desktop\universietet\internettjenester_Prosject\Globetrotter\Web\bin\Debug\net7.0\MediatR.Extensions.Microsoft.DependencyInjection.dll

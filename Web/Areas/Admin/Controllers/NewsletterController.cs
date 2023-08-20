@@ -68,5 +68,15 @@ public class NewsletterController : Controller
     }
     
     
+    [HttpPost]
+    public IActionResult Add(Newsletter model)
+    {
+         model.Status = true;
+            _newsletterService.Add(model);
+            return RedirectToAction("Index", "Default" ,new{Area=""});
+
+    }
+    
+    
    
 }

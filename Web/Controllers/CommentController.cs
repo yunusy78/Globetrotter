@@ -3,35 +3,49 @@ using Business.Concrete;
 using DataAccess.Concrete;
 using DataAccess.EntityFramework;
 using Entity.Concrete;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers;
-
+[Authorize]
 public class CommentController : Controller
 {
    
-    private readonly ICommentService _commentManager;
+    private readonly ICommentService _commentService;
+    private readonly UserManager<ApplicationUser> _userManager;
+    private readonly Context _context;
     
-    public CommentController(ICommentService commentManager)
+    public CommentController(ICommentService commentService, 
+        UserManager<ApplicationUser> userManager, Context context)
     {
-        _commentManager = commentManager;
+        _commentService = commentService;
+        _userManager = userManager;
+        _context = context;
     }
     
-    
-    // GET
-    public PartialViewResult AddComment()
-    {
-        return PartialView();
-    }
+   
     
     [HttpPost]
     public IActionResult AddComment(Comment comment)
     {
+        var user = _userManager.GetUserAsync(User).Result;
         comment.CreatedAt= DateTime.Now;
         comment.CommentState = true;
-        //comment.DestinationId =Guid.Parse("a8fce226-4171-40ee-8d00-66cf7e26e173");
-        _commentManager.Add(comment);
-        return RedirectToAction("Index", "Destination");
+        comment.UserId = user!.Id;
+        if(comment.Name == null)
+        {
+            comment.Name = user!.UserName;
+        }
+        
+        if(comment.Email == null)
+        {
+            comment.Email = user!.Email;
+        }   
+        _commentService.Add(comment);
+        return RedirectToAction("Details" ,"Destination", new {id = comment.DestinationId});
     }
+    
+    
     
 }

@@ -16,4 +16,8 @@ public class Guide
     public string? InstagramUrl { get; set; }
     public string? FacebookUrl { get; set; }
     public string? TwitterUrl { get; set; }
+    
+    public Guid DestinationId { get; set; }
+    
+    public Destination? Destination { get; set; }
 }

@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "title";
-    Layout = "_AppUserLayout";
+    Layout = "_AdminLayout";
 }
 
 <html>
@@ -22,7 +22,7 @@
     <div class="row justify-content-center">
         <div class="col-md-6 custom-form">
             <h1 class="text-center">Legge til Destinasjon</h1>
-            <form asp-controller="AdminDestination" asp-action="Add" asp-area="Admin" method="post" enctype="multipart/form-data">
+            <form asp-controller="DestinationCqrs" asp-action="Add" asp-area="Admin" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="title">City:</label>
                     <input type="text" id="title" asp-for="City" class="form-control"  placeholder="City" required="">
@@ -48,7 +48,7 @@
                 </div>
                 <br/>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-warning"><i class="fa fa-save"></i> Lagre</button>
+                    <button type="submit" class="btn btn-warning"><i class="bx bx-save"></i> Lagre</button>
                 </div>
                 <br/>
             </form>

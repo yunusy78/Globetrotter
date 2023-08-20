@@ -1,11 +1,11 @@
 ﻿@model List<Entity.Concrete.Comment>
 <div class="comments mt-5">
-    <h4 class="side-title ">Kommentarer @Model.Count </h4>
+     <h2 class="text-center mt-5" style="color: #f6273a">Kommentarer @Model.Count </h2>
     @foreach( var item in Model)
     {
     <div class="media mt-4">
         <div class="img-circle">
-            <img src="~/Traversal-Liberty/assets/images/c1.jpg" class="img-fluid" alt="...">
+            <img src="@item.User.ImageUrl" class="img-fluid" alt="...">
         </div>
         <div class="media-body">
 

@@ -13,6 +13,7 @@
 
 @await Html.PartialAsync("~/Views/LayoutPartial/_ScriptPartial.cshtml")
 
+@await RenderSectionAsync("scripts" , required: false)
 </body>
 
 </html>

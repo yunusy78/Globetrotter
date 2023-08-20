@@ -1,0 +1,59 @@
+﻿@model Web.CQRS.Result.GuidResult.GetGuidByIdQueryResult
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+
+<html>
+<head>
+    <title>Oppdater Profil </title>
+    <style>
+        .custom-form {
+        	border: 1px solid #ccc;
+        	padding: 20px;
+        	border-radius: 10px;
+        	margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 custom-form">
+            <h1 class="text-center">Opdater Guide</h1>
+            <form asp-controller="GuideMediatR" asp-action="Update" asp-area="Admin" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">Navn:</label>
+                    <input type="text" id="title" asp-for="FullName" class="form-control" value="@Model.FullName"  placeholder="Navn">
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <input type="hidden" id="title" asp-for="Id" class="form-control" value="@Model.Id">
+                </div>
+                <div class="form-group">
+                    <label for="title">E-post:</label>
+                    <input type="text" id="title" asp-for="Email" class="form-control" value="@Model.Email"  placeholder="E post">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">Beskrivelse:</label>
+                    <textarea type="text" id="title" asp-for="Description" rows="5" class="form-control" value="@Model.Description" placeholder="Beskrivelse"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <input type="hidden" asp-for="@Model.ImageUrl" />
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-warning"><i class="bx bx-save"></i> Lagre</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

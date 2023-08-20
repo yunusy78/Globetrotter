@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ryMHzUtnG+/+KelX+/kF7oeT8et2hx3gniy1jTsNqdi6t0NhWT1TgZSiZLE8on1DMGh1i9Hyr3BtEO6tTOFfig==",
+  "dgSpecHash": "qCesuiNTDyn5iImbexLWcW92uMAzSEzuK1ukafOgzQ9OFmCfnqLCAbVvNoT+0KUdMBmtT/5Ul9t0wq1ZdPn1Wg==",
   "success": true,
   "projectFilePath": "C:\\Users\\yunus\\Desktop\\universietet\\internettjenester_Prosject\\Globetrotter\\Web\\Web.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,9 @@
     "C:\\Users\\yunus\\.nuget\\packages\\k4os.compression.lz4.streams\\1.2.6\\k4os.compression.lz4.streams.1.2.6.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\k4os.hash.xxhash\\1.0.6\\k4os.hash.xxhash.1.0.6.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\mailkit\\4.1.0\\mailkit.4.1.0.nupkg.sha512",
+    "C:\\Users\\yunus\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
+    "C:\\Users\\yunus\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\yunus\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",

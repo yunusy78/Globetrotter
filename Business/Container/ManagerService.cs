@@ -44,6 +44,8 @@ public static class ManagerService
        
        Services.AddScoped<IAnnouncementService, AnnouncementManager>();
        Services.AddScoped<IAnnouncementDal, EfAnnouncementDal>();
+       
+      
     }
     
     public static void CustomValidator(this IServiceCollection services)

@@ -44,4 +44,14 @@ public GuideManager(IGuideDal guideDal)
     {
         return _guideDal.GetListByFilter(filter);
     }
+
+    public List<Guide> GetListWithDestination()
+    {
+        return _guideDal.GetListWithDestination();
+    }
+
+    public List<Guide> GetListByDestinationId(Guid id)
+    {
+        return _guideDal.GetListByDestinationId(id);
+    }
 }

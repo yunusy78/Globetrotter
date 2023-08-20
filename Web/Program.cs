@@ -11,8 +11,10 @@ using DTO.DTOs.AnnouncementDTOs;
 using Entity.Concrete;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Web.CQRS.Handlers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -52,7 +54,13 @@ builder.Services.AddHttpClient();
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.CustomValidator();
 builder.Services.AddControllersWithViews().AddFluentValidation();
-
+builder.Services.AddScoped<GetAllDestinationQueryHandler>();
+builder.Services.AddScoped<GetDestinationByIdQueryHandler>();
+builder.Services.AddScoped<CreateDestinationCommandHandler>();
+builder.Services.AddScoped<DeleteDestinationCommandHandler>();
+builder.Services.AddScoped<UpdateDestinationCommandHandler>();
+builder.Services.AddMediatR(typeof(Program));
+builder.Services.AddRazorPages();
 
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
