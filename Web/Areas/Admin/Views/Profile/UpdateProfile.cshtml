@@ -1,0 +1,93 @@
+﻿@model Web.Areas.Member.Models.UserUpdateProfileViewModel
+
+@{
+    ViewBag.Title = "Edit Profile";
+    Layout = "_AppUserLayout";
+}
+
+<html>
+<head>
+    <title>Oppdater Profil </title>
+    <style>
+        .custom-form {
+        	border: 1px solid #ccc;
+        	padding: 20px;
+        	border-radius: 10px;
+        	margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 custom-form">
+            <h1 class="text-center">Oppdater Profil</h1>
+            <form asp-controller="Profile" asp-action="UpdateProfile" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">Fornavn:</label>
+                    <input type="text" id="title" asp-for="FirstName" class="form-control" value="@Model.FirstName" placeholder="Fornavn">
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="title">Etternavn:</label>
+                    <input type="text" id="title" asp-for="LastName" class="form-control" value="@Model.LastName" placeholder="Etternavn">
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="title">E Post:</label>
+                    <input type="email" id="title" asp-for="Email" class="form-control" value="@Model.Email" placeholder="E Post">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="title">Passord:</label>
+                    <input type="password" id="title" asp-for="Password" class="form-control" value="@Model.Password" placeholder="Passord">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="title">Bekreft Passord:</label>
+                    <input type="password" id="title" asp-for="ConfirmPassword" class="form-control" placeholder="Bekreft Passord">
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="title">Telefonnummer:</label>
+                    <input type="text" id="title" asp-for="PhoneNumber" class="form-control" value="@Model.PhoneNumber" placeholder="Telefonnummer">
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="form-holder">
+                    <span class="lnr lnr-user"></span>
+                    <select asp-for="Gender" class="form-control">
+                        <option value="">Velg kjønn</option>
+                        <option value="male">Mann</option>
+                        <option value="female">Kvinne</option>
+                        <option value="other">Annet</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="title">Om Deg:</label>
+                    <textarea type="text" id="title" asp-for="About" class="form-control" rows="4" value="@Model.About" placeholder="Om Deg"> </textarea>
+                    <span asp-validation-for="About" class="text-danger"></span>
+                </div>
+                
+                
+                
+                <div class="mb-3">
+                    <label asp-for="ImageUrl">Velg Bilde:</label>
+                    <input type="file" id="uploadBox" name="file" class="form-control"/>
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                </div>
+                
+                
+                
+                <div class="text-center">
+                    <button type="submit" class="btn btn-warning"><i class="fa fa-edit"></i> Oppdater Profil</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
