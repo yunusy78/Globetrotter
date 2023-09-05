@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Web.Areas.Member.Controllers;
-[Area("Member")]
-public class MessageController : Controller
+namespace Web.Areas.Admin.Controllers;
+
+public class QRcodeController : Controller
 {
     // GET
     public IActionResult Index()
