@@ -78,5 +78,9 @@ The project is available on GitHub for reference and collaboration: [GitHub Proj
 
 # Images
 
-![Proje Görseli](link/to/your/project/image.png)
+![Proje Görseli](Web/wwwroot/ImageFile/About/traversal_1.png)
+![Proje Görseli](Web/wwwroot/ImageFile/About/traversal_2.png)
+![Proje Görseli](Web/wwwroot/ImageFile/About/traversal_3.png)
+![Proje Görseli](Web/wwwroot/ImageFile/About/traversal_4.png)
+![Proje Görseli](Web/wwwroot/ImageFile/About/traversal_5.png)
 
