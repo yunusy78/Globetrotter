@@ -80,7 +80,7 @@ The project is available on GitHub for reference and collaboration: [GitHub Proj
 
 ![Proje Görseli](Web/wwwroot/ImageFile/About/traversal_1.png)
 ![Proje Görseli](Web/wwwroot/ImageFile/About/traversal_2.png)
-![Proje Görseli](Web/wwwroot/ImageFile/About/traversal_3.png)
+![Proje Görseli](Web/wwwroot/ImageFile/About/traversal_3png.png)
 ![Proje Görseli](Web/wwwroot/ImageFile/About/traversal_4.png)
 ![Proje Görseli](Web/wwwroot/ImageFile/About/traversal_5.png)
 
